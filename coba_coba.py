@@ -8,7 +8,7 @@ button = document['btn']
 output = document['output']
 
 
-hitungbmi = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),
+type1 = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),
          'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
 
 
@@ -28,8 +28,8 @@ def getNum(x):
             return temp
 
 def rumus(num1, num2):
-    for key in hitungbmi.keys():
-        return hitungbmi['rumus'](num1, num2)
+    for key in type1.keys():
+        return type1['rumus'](num1, num2)
 
 def main(ev):
     num1 = getNum(data1.value)
