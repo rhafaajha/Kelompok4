@@ -6,7 +6,7 @@ data1 = document['data1']
 data2 = document['data2']
 button = document['btn']
 output = document['output']
-type1 = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
+hitungbmi = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
 
 # Fungsi agar input yang dimasukan bertipe int atau float
 def getNum(x):
@@ -24,8 +24,8 @@ def getNum(x):
         else:
             return temp
 def rumus(num1, num2):
-    for key in type1.keys():
-        return type1['rumus'](num1, num2)
+    for key in hitungbmi.keys():
+        return hitungbmi['rumus'](num1, num2)
 
 # Fungsi Main
 def main(ev):
