@@ -1,14 +1,14 @@
 from browser import document, alert  
 import math
 
-# Mendeklarasikan Variable 
+# Mendeklarasikan Variable
 data1 = document['data1']
 data2 = document['data2']
 button = document['btn']
 output = document['output']
 type1 = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
 
-# membuat fungsi agar data yang dimasukan adalah bilangan 
+# Fungsi agar input yang dimasukan bertipe int atau float
 def getNum(x):
     temp = x
     try:
@@ -27,7 +27,7 @@ def rumus(num1, num2):
     for key in type1.keys():
         return type1['rumus'](num1, num2)
 
-# Membuat fungsi Main
+# Fungsi Main
 def main(ev):
     num1 = getNum(data1.value)
     num2 = getNum(data2.value)
@@ -37,9 +37,7 @@ def keyEnter(ev):
     traceKey = f"{ev.code}"
     if traceKey == 'Enter':
         main(0)
-    
+
 button.bind('click', main)  
-
-data1.bind("keypress", keyEnter)
-data2.bind("keypress", keyEnter)
-
+input1.bind("keypress", keyEnter)
+input2.bind("keypress", keyEnter)
