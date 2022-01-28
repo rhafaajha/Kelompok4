@@ -33,7 +33,11 @@ def main(ev):
     num2 = getNum(data2.value)
     result = rumus(num1, num2)
     output.textContent = str(result)
-
-button.bind('click', main)  # Memanggil 'Fungsi Main' ketika di-click
+def keyEnter(ev):
+    traceKey = f"{ev.code}"
+    if traceKey == 'Enter':
+        main(0)
+    
+button.bind('click', main)  
 
 
