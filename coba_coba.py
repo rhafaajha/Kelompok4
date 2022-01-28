@@ -5,7 +5,7 @@ import math
 data1 = document['data1']
 data2 = document['data2']
 button = document['btn']
-output = document['output']
+hasil = document['hasil']
 hitungbmi = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
 
 # Fungsi agar input yang dimasukan bertipe int atau float
@@ -32,7 +32,7 @@ def main(ev):
     num1 = getNum(data1.value)
     num2 = getNum(data2.value)
     result = rumus(num1, num2)
-    output.textContent = str(result)
+    hasil.textContent = str(result)
 def keyEnter(ev):
     traceKey = f"{ev.code}"
     if traceKey == 'Enter':
