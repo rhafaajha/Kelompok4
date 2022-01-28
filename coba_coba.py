@@ -1,17 +1,14 @@
 from browser import document, alert  
 import math
 
-# Deklarasi Variable
+# Mendeklarasikan Variable 
 data1 = document['data1']
 data2 = document['data2']
 button = document['btn']
 output = document['output']
+type1 = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
 
-# Dictionary
-type1 = {'rumus': lambda TB, BB: round(BB / ((TB/100) ** 2), 1),
-         'data1': 'Tinggi Badan (cm)', 'data2': 'Berat Badan (kg)'}
-
-# Fungsi untuk mengubah string dari input ke int atau float
+# membuat fungsi agar data yang dimasukan adalah bilangan 
 def getNum(x):
     temp = x
     try:
@@ -26,25 +23,17 @@ def getNum(x):
             return temp
         else:
             return temp
-
-# Fungsi untuk memanggil formula pada dictionary
 def rumus(num1, num2):
     for key in type1.keys():
         return type1['rumus'](num1, num2)
 
-# Fungsi Main
+# Membuat fungsi Main
 def main(ev):
     num1 = getNum(data1.value)
     num2 = getNum(data2.value)
     result = rumus(num1, num2)
     output.textContent = str(result)
 
-# Fungsi keyEnter
-def keyEnter(ev):
-    traceKey = f"{ev.code}"
-    if traceKey == 'Enter':
-        main(0)
-
-button.bind('click', main)  # Memanggil 'Fungsi Main' ketika button di-click
+button.bind('click', main)  # Memanggil 'Fungsi Main' ketika di-click
 
 
