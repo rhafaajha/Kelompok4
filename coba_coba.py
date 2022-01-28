@@ -44,4 +44,5 @@ def keyEnter(ev):
 
 button.bind('click', main)  
 
-
+data1.bind("keypress", keyEnter)
+data2.bind("keypress", keyEnter)
